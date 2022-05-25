@@ -1,0 +1,29 @@
+.black{
+background-color: black;
+}
+
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: blue;
+}
+.green{
+  background-color: green;
+}
+
+.color{
+  border: black solid 1px;
+  display: inline-block;
+ 
+}
+#color-palette{
+  display: inline-block;
+  width: 600px;
+  height: 40px;
+}
+.tamanho{
+  width: 40px;
+  height: 40px;
+}
