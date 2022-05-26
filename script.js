@@ -1,6 +1,7 @@
 
  let pixelBoard= document.querySelector("#pixel-board")
  let pixels = document.getElementsByClassName("pixel")
+ let botao=document.getElementById("clear-board")
 
   for(let index=0; index<5;index+=1){
       let linha= document.createElement('div')
@@ -34,7 +35,7 @@
 }
 // Consultei documentação https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 //para usar o getComputedStyle
-console.log(pixels)
+
 
 for(let index3=0;index3<pixels.length;index3+=1){
 pixels[index3].addEventListener('click', function(event){
@@ -44,6 +45,14 @@ pixels[index3].addEventListener('click', function(event){
   let corSelecionada=window.getComputedStyle(corSelected).backgroundColor
   pixels[index3].style.backgroundColor= corSelecionada
   
+  })
+}
+for(let index3=0;index3<pixels.length;index3+=1){
+  botao.addEventListener('click', function(event){
+    for(let index4=0;index4<pixels.length;index4+=1){
+      pixels[index3].style.backgroundColor='white'
+    }
+    
   })
 }
     
