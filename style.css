@@ -4,20 +4,23 @@
 }
 body{
   margin-left:40%;
+  background-image: url(bg.gif);
+  height:800px;
+  background-size: cover;
 }
 .black{
 background-color: black;
 }
 
 .red{
-  background-color: red;
+  background-color: rgb(224, 112, 112);
 }
 
 .blue{
-  background-color: blue;
+  background-color: rgb(141, 141, 212);
 }
 .green{
-  background-color: green;
+  background-color: rgb(140, 224, 140);
 }
 
 .color{
@@ -27,15 +30,18 @@ background-color: black;
 }
 #color-palette{
   align-items: center;
-  margin-left:12px;
+  margin-left:0px;
   margin-top:40px;
   width: 600px;
   height: 40px;
 }
 h1{
   font-family: monospace;
-  color:gray;
-  margin-top:40px;
+  color:white;
+  margin-top:50px;
+  margin-left:-60%;
+  background-color:rgb(216, 131, 145);
+  margin-right: -70px;
 }
 .tamanho{
   width: 40px;
@@ -47,8 +53,17 @@ h1{
   background-color: white;
   border:1px solid black;
   display:inline-block;
+  margin:-3px;
 
 }
 #botao{
-  padding:10px 80px
+  padding:10px 60px;
+  
+}
+#clear-board{
+  padding: 10px;
+  background-color: beige;
+  border-color: beige;
+  border-style: hidden;
+  color:rgb(216, 131, 145)
 }
