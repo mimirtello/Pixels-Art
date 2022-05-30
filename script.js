@@ -1,4 +1,6 @@
 
+ 
+ 
  let pixelBoard= document.querySelector("#pixel-board")
  let pixels = document.getElementsByClassName("pixel")
  let botao=document.getElementById("clear-board")
@@ -41,7 +43,7 @@
 //para usar o getComputedStyle
 
 colorido()
-
+limpa()
 //Colore o Pixel
 
 function colorido(){
@@ -59,7 +61,6 @@ function colorePixel(event){
 }
 
 //Limpa o quadro
-limpa()
 
 function limpa(){
   for(let index3=0;index3<pixels.length;index3+=1){
@@ -80,27 +81,71 @@ let inputVqv= document.getElementById('board-size')
 botaoVqv.addEventListener('click', geraQuadro)
 
  function geraQuadro(){
-  if(inputVqv.value===''|| inputVqv.value===0){
+   
+  
+
+  if(inputVqv.value==='' || inputVqv===0){
    window.alert('Board inválido!')
-   }else{
+   }
+    else {
+
+  limites()
 
    for(let index4=0; index4<pixels.length;index4+=1){
    pixelBoard.removeChild(pixelBoard.lastChild)
   }
+  
+
   for(let index5=0; index5<inputVqv.value;index5+=1){
   let linha2= document.createElement('div')
   pixelBoard.appendChild(linha2)
-        
+
+  
+
   for(let index2=0; index2<inputVqv.value;index2+=1){
   let pixel2=document.createElement('div')
   pixel2.className="pixel" 
   linha2.appendChild(pixel2)
- }
- }
+  }
+ }  
  colorido()
  limpa()
  }
 } 
+
+function limites(){
+  if(inputVqv!==0 && inputVqv!=='' && inputVqv.value<5){
+    inputVqv.value=5
+  }else if(inputVqv.value>50){
+    inputVqv.value=50
+  }else{
+    inputVqv.value=inputVqv.value
+  }
+}
+
+function random(){
+let aleatorio=Math.round(Math.random() * 255+1)
+return aleatorio
+  }
+  
+function coresAleatorias(){
+
+  let cor=document.getElementsByClassName("color")
+
+  console.log(cor)
+
+  for(let index6=0; index6 < cor.length; index6+=1){
+  cor[1].style.backgroundColor= `rgb(${random()}, ${random()}, ${random()})`
+  cor[2].style.backgroundColor= `rgb(${random()}, ${random()}, ${random()})`
+  cor[3].style.backgroundColor= `rgb(${random()}, ${random()}, ${random()})`
+  console.log(cor)
+  }
+}
+
+
+window.addEventListener('load', function () {
+  coresAleatorias()
+})
 
   
 

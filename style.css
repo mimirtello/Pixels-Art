@@ -12,7 +12,7 @@ body{
 background-color: black;
 }
 
-.red{
+/* .red{
   background-color: rgb(224, 112, 112);
 }
 
@@ -21,7 +21,7 @@ background-color: black;
 }
 .green{
   background-color: rgb(140, 224, 140);
-}
+} */
 
 .color{
   border: black solid 1px;
