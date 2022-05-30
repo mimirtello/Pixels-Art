@@ -57,7 +57,7 @@ h1{
 
 }
 #botao{
-  padding:10px 60px;
+  padding:10px;
   
 }
 #clear-board{
@@ -66,4 +66,14 @@ h1{
   border-color: beige;
   border-style: hidden;
   color:rgb(216, 131, 145)
+}
+#generate-board{
+  padding: 10px;
+  background-color: beige;
+  border-color: beige;
+  border-style: hidden;
+  color:rgb(216, 131, 145)
+}
+#board-size{
+  padding:10px;
 }

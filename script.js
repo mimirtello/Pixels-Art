@@ -3,6 +3,8 @@
  let pixels = document.getElementsByClassName("pixel")
  let botao=document.getElementById("clear-board")
 
+//Cria o Board
+
   for(let index=0; index<5;index+=1){
       let linha= document.createElement('div')
       pixelBoard.appendChild(linha)
@@ -18,6 +20,8 @@
 
 // consultei o stackoverflow para saber do classList.add e remove
 //Link: https://pt.stackoverflow.com/questions/146423/como-adicionar-e-remover-classes-com-javascript
+
+//Seleciona a cor
 
  let cor=document.querySelectorAll('.color')
  
@@ -36,26 +40,68 @@
 // Consultei documentação https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 //para usar o getComputedStyle
 
+colorido()
 
+//Colore o Pixel
+
+function colorido(){
 for(let index3=0;index3<pixels.length;index3+=1){
-pixels[index3].addEventListener('click', function(event){
+pixels[index3].addEventListener('click', colorePixel)
+function colorePixel(event){
   
   let corSelected=document.getElementsByClassName('selected')[0]
 
   let corSelecionada=window.getComputedStyle(corSelected).backgroundColor
   pixels[index3].style.backgroundColor= corSelecionada
   
-  })
+  }
+ }
 }
-for(let index3=0;index3<pixels.length;index3+=1){
-  botao.addEventListener('click', function(event){
-    for(let index4=0;index4<pixels.length;index4+=1){
-      pixels[index3].style.backgroundColor='white'
-    }
-    
-  })
+
+//Limpa o quadro
+limpa()
+
+function limpa(){
+  for(let index3=0;index3<pixels.length;index3+=1){
+    botao.addEventListener('click', function(event){
+      for(let index4=0;index4<pixels.length;index4+=1){
+        pixels[index3].style.backgroundColor='white'
+      }
+      
+    })
+  }
 }
-    
+
+//BONUS
+
+let botaoVqv =document.getElementById('generate-board')
+let inputVqv= document.getElementById('board-size')
+
+botaoVqv.addEventListener('click', geraQuadro)
+
+ function geraQuadro(){
+  if(inputVqv.value===''|| inputVqv.value===0){
+   window.alert('Board inválido!')
+   }else{
+
+   for(let index4=0; index4<pixels.length;index4+=1){
+   pixelBoard.removeChild(pixelBoard.lastChild)
+  }
+  for(let index5=0; index5<inputVqv.value;index5+=1){
+  let linha2= document.createElement('div')
+  pixelBoard.appendChild(linha2)
+        
+  for(let index2=0; index2<inputVqv.value;index2+=1){
+  let pixel2=document.createElement('div')
+  pixel2.className="pixel" 
+  linha2.appendChild(pixel2)
+ }
+ }
+ colorido()
+ limpa()
+ }
+} 
+
   
 
 
