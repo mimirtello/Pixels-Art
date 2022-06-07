@@ -1,7 +1,4 @@
-
- 
- 
- let pixelBoard= document.querySelector("#pixel-board")
+let pixelBoard= document.querySelector("#pixel-board")
  let pixels = document.getElementsByClassName("pixel")
  let botao=document.getElementById("clear-board")
 
